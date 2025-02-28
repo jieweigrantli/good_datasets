@@ -382,7 +382,7 @@ def format_optional_assets(capex, verbose = False):
                 ]
 
             capex_cost = [
-                cost[key][idx] / 1e6 for idx in range(1, 7) if not np.isnan(cost[key][idx])
+                cost[key][idx] for idx in range(1, 7) if not np.isnan(cost[key][idx])
                 ]
 
             if (not capex_capacity) or (not capex_cost):
@@ -556,14 +556,16 @@ def format_policies(policies, verbose = False):
             'capacity_portion': row['Capacity Portion'],
             'capacity_minimum': row['Capacity Minimum'],
             'inclusion_criteria': [
-                "lambda a: a.get('renewable', False)",
+                "lambda a: a.get('renewable', True)",
                 "lambda a: a.get('_class', '') != 'Store'",
                 "lambda a: a.get('type', '') != 'load'",
+                f"lambda a: a.get('jurisdiction', '') == '{row['USPS Code']}'",
             ],
             'exclusion_criteria': [
                 "lambda a: not a.get('renewable', False)",
                 "lambda a: a.get('_class', '') != 'Store'",
                 "lambda a: a.get('type', '') != 'load'",
+                f"lambda a: a.get('jurisdiction', '') == '{row['USPS Code']}'",
             ],
             }
 

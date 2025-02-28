@@ -9,14 +9,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'WA'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'WA'"
         ]
     },
     {
@@ -29,14 +31,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'OR'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'OR'"
         ]
     },
     {
@@ -49,14 +53,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'CA'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'CA'"
         ]
     },
     {
@@ -69,14 +75,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'NV'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'NV'"
         ]
     },
     {
@@ -89,14 +97,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'AZ'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'AZ'"
         ]
     },
     {
@@ -109,14 +119,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'CO'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'CO'"
         ]
     },
     {
@@ -129,14 +141,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'NM'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'NM'"
         ]
     },
     {
@@ -149,14 +163,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 10000000000.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'TX'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'TX'"
         ]
     },
     {
@@ -169,14 +185,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'MN'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'MN'"
         ]
     },
     {
@@ -189,14 +207,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'MO'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'MO'"
         ]
     },
     {
@@ -209,14 +229,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'IL'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'IL'"
         ]
     },
     {
@@ -229,14 +251,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'MI'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'MI'"
         ]
     },
     {
@@ -244,19 +268,21 @@
         "type": "rps",
         "_class": "RPS",
         "jurisdiction": "OH",
-        "generation_portion": 8.5,
+        "generation_portion": 0.085,
         "generation_minimum": 0,
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'OH'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'OH'"
         ]
     },
     {
@@ -269,14 +295,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'NY'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'NY'"
         ]
     },
     {
@@ -289,14 +317,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'PA'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'PA'"
         ]
     },
     {
@@ -309,14 +339,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'MD'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'MD'"
         ]
     },
     {
@@ -329,14 +361,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'VA'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'VA'"
         ]
     },
     {
@@ -349,14 +383,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'NC'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'NC'"
         ]
     },
     {
@@ -369,14 +405,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'NJ'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'NJ'"
         ]
     },
     {
@@ -389,14 +427,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'DE'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'DE'"
         ]
     },
     {
@@ -409,14 +449,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'VT'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'VT'"
         ]
     },
     {
@@ -429,14 +471,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'NH'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'NH'"
         ]
     },
     {
@@ -449,14 +493,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'MA'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'MA'"
         ]
     },
     {
@@ -469,14 +515,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'CT'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'CT'"
         ]
     },
     {
@@ -489,14 +537,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'RI'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'RI'"
         ]
     },
     {
@@ -509,14 +559,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'ME'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'ME'"
         ]
     },
     {
@@ -529,14 +581,16 @@
         "capacity_portion": 0,
         "capacity_minimum": 0.0,
         "inclusion_criteria": [
-            "lambda a: a.get('renewable', False)",
+            "lambda a: a.get('renewable', True)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'HI'"
         ],
         "exclusion_criteria": [
             "lambda a: not a.get('renewable', False)",
             "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'"
+            "lambda a: a.get('type', '') != 'load'",
+            "lambda a: a.get('jurisdiction', '') == 'HI'"
         ]
     }
 ]
