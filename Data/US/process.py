@@ -382,7 +382,7 @@ def format_optional_assets(capex, verbose = False):
                 ]
 
             capex_cost = [
-                cost[key][idx] for idx in range(1, 7) if not np.isnan(cost[key][idx])
+                cost[key][idx] / 1e6 for idx in range(1, 7) if not np.isnan(cost[key][idx])
                 ]
 
             if (not capex_capacity) or (not capex_cost):
