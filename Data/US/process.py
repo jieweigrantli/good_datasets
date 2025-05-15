@@ -157,6 +157,7 @@ def build_profiles(data, verbose = False):
     profiles['wind'] = long_wide(data['onshore_wind_generation_profile'])
     profiles['solar'] = long_wide(data['solar_generation_profile'])
     profiles['load'] = long_wide_load(data['load_profile'])
+    profiles['hydro'] = long_wide_hydro(data['hydro'])
 
     _print(f'Profiles built: {time.time() - t0:.4} seconds', disp = verbose)
 
@@ -166,7 +167,9 @@ def build_policies(data, verbose = False):
 
     t0 = time.time()
 
-    policies = data['rps']
+    policies = {}
+
+    policies['rps'] = build_rps(data['rps'])
 
     _print(f'Policies built: {time.time() - t0:.4} seconds', disp = verbose)
 
@@ -221,7 +224,7 @@ def format_installed_assets(assets, scale, verbose = False):
         'storage': 'Store',
     }
 
-    data = []
+    data = {}
 
     for idx, row in assets.iterrows():
 
@@ -245,8 +248,7 @@ def format_installed_assets(assets, scale, verbose = False):
 
         profile = f"{row['RegionName']}:{plant_type}:"
 
-        asset_data = {
-            'id': f'installed_{idx}',
+        data[f'installed_{idx}'] = {
             'oris_code': (
                 int(np.nan_to_num(row['ORISPL'])) if row['ORISPL'] is not np.nan else 'none',
                 )[0],
@@ -279,8 +281,6 @@ def format_installed_assets(assets, scale, verbose = False):
             'pm': np.nan_to_num(row['PLPMTRO']) * 0.453592 / 3.6e9,
         }
 
-        data.append(asset_data)
-
     regions, indices = np.unique(assets['RegionName'], return_index = True)
     jurisdictions = assets['StateName'].to_numpy()[indices]
 
@@ -293,8 +293,7 @@ def format_installed_assets(assets, scale, verbose = False):
 
             continue
 
-        asset_data = {
-            'id': f'base_load_{region}',
+        data[f'base_load_{region}'] = {
             'oris_code': 'none',
             'egrid_id': 'none',
             'type': 'load',
@@ -320,8 +319,6 @@ def format_installed_assets(assets, scale, verbose = False):
             'pm': 0,
         }
 
-        data.append(asset_data)
-
     _print(f'Installed assets formatted: {time.time() - t0:.4} seconds', disp = verbose)
 
     return data
@@ -339,7 +336,7 @@ def format_optional_assets(capex, verbose = False):
         'storage': 'Store',
     }
 
-    data = []
+    data = {}
 
     k = -1
 
@@ -397,11 +394,10 @@ def format_optional_assets(capex, verbose = False):
 
             for idx in range(len(capex_capacity)):
 
-                plant_data = {
-                    'id': f'optional_{k}_{idx}',
+                data[f'optional_{k}_{idx}'] = {
                     'oris_code': 'none',
                     'egrid_id': 'none',
-                    'type': f'capex_{plant_type}',
+                    'type': f'{plant_type}',
                     'fuel': plant_type,
                     '_class': classes[plant_type],
                     'profile': profile,
@@ -424,8 +420,42 @@ def format_optional_assets(capex, verbose = False):
                     'n2o': 0,
                     'pm': 0,
                 }
+    
+    regions = np.unique([p['region'] for p in data.values()])
 
-                data.append(plant_data)
+    for idx, region in enumerate(regions):
+
+        # profile = f"{region}:hydro"
+
+        if capacity is None:
+
+            continue
+
+        data[f'optional_storage_{idx}'] = {
+            'oris_code': 'none',
+            'egrid_id': 'none',
+            'type': 'battery',
+            '_class': 'Store',
+            # 'profile': profile,
+            'region': region,
+            'jurisdiction': None,
+            'installed_capacity': 0,
+            'capacity_factor': 1,
+            'dispatchable': True,
+            'combinable': False,
+            'renewable': False,
+            'extensible': True,
+            'capex_capacity': np.inf,
+            'capex_cost': 1200 / (4 * 3.6e6),
+            'operating_cost': 0,
+            'heat_rate': 0,
+            'nox': 0,
+            'so2': 0,
+            'co2': 0,
+            'ch4': 0,
+            'n2o': 0,
+            'pm': 0,
+        }
 
     _print(f'Optional assets formatted: {time.time() - t0:.4} seconds', disp = verbose)
 
@@ -435,7 +465,7 @@ def format_lines(transmission, verbose = False):
 
     t0 = time.time()
 
-    links = []
+    links = {}
 
     k = -1
 
@@ -453,13 +483,16 @@ def format_lines(transmission, verbose = False):
 
                     cost = transmission['cost'].loc[source, target]
 
+                    if capacity == 0:
+
+                        continue
+
                     # Append data to link_example list
-                    link = {
-                        'id': f'line_{k}',
+                    links[f'line_{k}'] = {
                         'source': source,
                         'target': target,
                         'type': 'line',
-                        '_class': 'Line',
+                        '_class': 'Transmission',
                         'installed_capacity': capacity * 1e6,
                         'operating_cost': cost / 3.6e9,
                         'dispatchable': True,
@@ -467,8 +500,6 @@ def format_lines(transmission, verbose = False):
                         'capex_capacity': 0,
                         'capex_cost': 0,
                         }
-
-                    links.append(link)
 
     _print(f'Lines formatted: {time.time() - t0:.4} seconds', disp = verbose)
 
@@ -530,6 +561,19 @@ def format_profiles(profiles, verbose = False):
             scale, capacity, f"{row['Region']}:load"
             )
 
+    for idx, row in profiles['hydro'].iterrows():
+
+        profile = row['Profile']
+        capacity = min(row['Profile'])
+
+        data = nested_add(
+            data, row['Profile'] / capacity, f"{row['Region']}:hydro"
+            )
+
+        scale = nested_add(
+            scale, capacity, f"{row['Region']}:hydro"
+            )
+
     _print(f'Profiles formatted: {time.time() - t0:.4} seconds', disp = verbose)
 
     return data, scale
@@ -538,40 +582,33 @@ def format_policies(policies, verbose = False):
 
     t0 = time.time()
 
-    data = []
+    data = {}
 
     k = -1
 
-    for idx, row in policies.iterrows():
+    for jurisdiction, ratio in policies['rps'].items():
 
         k += 1
 
-        policy = {
-            'id': f'policy_{k}',
+        data[f'rps_{jurisdiction}'] = {
             'type': f'rps',
-            '_class': 'RPS',
-            'jurisdiction': row['USPS Code'],
-            'generation_portion': row['Generation Portion'],
-            'generation_minimum': row['Generation Minimum'],
-            'capacity_portion': row['Capacity Portion'],
-            'capacity_minimum': row['Capacity Minimum'],
-            'inclusion_criteria': [
-                "lambda a: a.get('renewable', True)",
-                "lambda a: a.get('_class', '') != 'Store'",
-                "lambda a: a.get('type', '') != 'load'",
-                f"lambda a: a.get('jurisdiction', '') == '{row['USPS Code']}'",
-            ],
-            'exclusion_criteria': [
-                "lambda a: not a.get('renewable', False)",
-                "lambda a: a.get('_class', '') != 'Store'",
-                "lambda a: a.get('type', '') != 'load'",
-                f"lambda a: a.get('jurisdiction', '') == '{row['USPS Code']}'",
-            ],
-            }
+            '_class': 'Portfolio_Standard',
+            'ratio': ratio,
+            'inclusion_criteria': {
+                "renewable": "lambda a: a.get('renewable', False)",
+                "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+                "not_load": "lambda a: a.get('type', '') != 'load'",
+                "jurisdiction": f"lambda a: a.get('jurisdiction', '') == '{jurisdiction}'",
+            },
+            'exclusion_criteria': {
+                "renewable": "lambda a: not a.get('renewable', False)",
+                "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+                "not_load": "lambda a: a.get('type', '') != 'load'",
+                "jurisdiction": f"lambda a: a.get('jurisdiction', '') == '{jurisdiction}'",
+            },
+        }
 
-        data.append(policy)
-
-    _print(f'Optional assets formatted: {time.time() - t0:.4} seconds', disp = verbose)
+    _print(f'Policies formatted: {time.time() - t0:.4} seconds', disp = verbose)
 
     return data
 
@@ -675,6 +712,22 @@ def nested_add(dictionary, value, *keys):
         
     return dictionary
 
+def build_rps(df, states = None, year = 2025):
+
+    if states == None:
+
+        states = df['st'].unique()
+
+    data = {}
+
+    for state in states:
+
+        df_s = df[df['st'] == state]
+
+        data[state] = np.interp(year, df_s['t'], df_s['rps_all'])
+
+    return data
+
 def renewable_transmission_cost(unit_cost, region_cost, capital_cost, year = '2023'):
 
     unit_capital_cost = unit_cost[unit_cost["cost"] == 'Capital(2016$/kW)']
@@ -753,6 +806,25 @@ def long_wide_load(df):
         if 'Hour' in key:
 
             df[key] = df[key].astype(str).str.replace(',', '').astype(float) * -1e6
+
+    # Define the columns to keep (first four columns)
+    columns_to_keep = ['Region']
+
+    # Group by the first four columns and concatenate columns 6 to 26
+    result_df = df.groupby(columns_to_keep).apply(
+        lambda x: x.iloc[:, 3:].values.flatten()
+        ).reset_index()
+
+    result_df = result_df.rename(columns={result_df.columns[1]: "Profile"})
+
+    # Convert the Profile column to a list of lists
+    result_df['Profile'] = result_df['Profile'].tolist()
+
+    return result_df
+
+def long_wide_hydro(df):
+
+    df = df[df['PlantType'] == 'Hydro']
 
     # Define the columns to keep (first four columns)
     columns_to_keep = ['Region']

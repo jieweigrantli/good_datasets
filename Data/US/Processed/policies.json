@@ -1,596 +1,546 @@
-[
-    {
-        "id": "policy_0",
+{
+    "rps_AZ": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "WA",
-        "generation_portion": 0.35,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'WA'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'WA'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.086690195,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'AZ'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'AZ'"
+        }
     },
-    {
-        "id": "policy_1",
+    "rps_CA": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "OR",
-        "generation_portion": 0.5,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'OR'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'OR'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.447622503,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'CA'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'CA'"
+        }
     },
-    {
-        "id": "policy_2",
+    "rps_CO": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "CA",
-        "generation_portion": 0.45,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'CA'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'CA'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.195712274,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'CO'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'CO'"
+        }
     },
-    {
-        "id": "policy_3",
+    "rps_CT": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "NV",
-        "generation_portion": 0.35,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'NV'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'NV'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.336294722,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'CT'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'CT'"
+        }
     },
-    {
-        "id": "policy_4",
+    "rps_DE": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "AZ",
-        "generation_portion": 0.15,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'AZ'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'AZ'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.175451804,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'DE'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'DE'"
+        }
     },
-    {
-        "id": "policy_5",
+    "rps_IA": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "CO",
-        "generation_portion": 0.3,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'CO'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'CO'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.005454992,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'IA'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'IA'"
+        }
     },
-    {
-        "id": "policy_6",
+    "rps_IL": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "NM",
-        "generation_portion": 0.4,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'NM'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'NM'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.22161836,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'IL'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'IL'"
+        }
     },
-    {
-        "id": "policy_7",
+    "rps_KS": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "TX",
-        "generation_portion": 0.0,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 10000000000.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'TX'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'TX'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.0,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'KS'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'KS'"
+        }
     },
-    {
-        "id": "policy_8",
+    "rps_MA": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "MN",
-        "generation_portion": 0.45,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'MN'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'MN'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.267725755,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'MA'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'MA'"
+        }
     },
-    {
-        "id": "policy_9",
+    "rps_MD": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "MO",
-        "generation_portion": 0.15,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'MO'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'MO'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.386638895,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'MD'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'MD'"
+        }
     },
-    {
-        "id": "policy_10",
+    "rps_ME": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "IL",
-        "generation_portion": 0.25,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'IL'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'IL'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.520222469,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'ME'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'ME'"
+        }
     },
-    {
-        "id": "policy_11",
+    "rps_MI": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "MI",
-        "generation_portion": 0.35,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'MI'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'MI'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.208333333,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'MI'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'MI'"
+        }
     },
-    {
-        "id": "policy_12",
+    "rps_MN": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "OH",
-        "generation_portion": 0.085,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'OH'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'OH'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.249791434,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'MN'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'MN'"
+        }
     },
-    {
-        "id": "policy_13",
+    "rps_MO": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "NY",
-        "generation_portion": 0.5,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'NY'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'NY'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.098480274,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'MO'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'MO'"
+        }
     },
-    {
-        "id": "policy_14",
+    "rps_MT": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "PA",
-        "generation_portion": 0.18,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'PA'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'PA'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.0,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'MT'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'MT'"
+        }
     },
-    {
-        "id": "policy_15",
+    "rps_NC": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "MD",
-        "generation_portion": 0.4,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'MD'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'MD'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.048230807,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'NC'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'NC'"
+        }
     },
-    {
-        "id": "policy_16",
+    "rps_NE": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "VA",
-        "generation_portion": 0.25,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'VA'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'VA'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.0,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'NE'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'NE'"
+        }
     },
-    {
-        "id": "policy_17",
+    "rps_NH": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "NC",
-        "generation_portion": 0.125,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'NC'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'NC'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.207723388,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'NH'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'NH'"
+        }
     },
-    {
-        "id": "policy_18",
+    "rps_NJ": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "NJ",
-        "generation_portion": 0.35,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'NJ'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'NJ'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.41482223,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'NJ'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'NJ'"
+        }
     },
-    {
-        "id": "policy_19",
+    "rps_NM": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "DE",
-        "generation_portion": 0.25,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'DE'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'DE'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.363695731,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'NM'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'NM'"
+        }
     },
-    {
-        "id": "policy_20",
+    "rps_NS": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "VT",
-        "generation_portion": 0.65,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'VT'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'VT'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.4,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'NS'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'NS'"
+        }
     },
-    {
-        "id": "policy_21",
+    "rps_NV": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "NH",
-        "generation_portion": 0.25,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'NH'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'NH'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.291710789,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'NV'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'NV'"
+        }
     },
-    {
-        "id": "policy_22",
+    "rps_NY": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "MA",
-        "generation_portion": 0.3,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'MA'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'MA'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.515187901,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'NY'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'NY'"
+        }
     },
-    {
-        "id": "policy_23",
+    "rps_OH": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "CT",
-        "generation_portion": 0.45,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'CT'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'CT'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.060610023,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'OH'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'OH'"
+        }
     },
-    {
-        "id": "policy_24",
+    "rps_OR": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "RI",
-        "generation_portion": 0.9,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'RI'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'RI'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.202639484,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'OR'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'OR'"
+        }
     },
-    {
-        "id": "policy_25",
+    "rps_PA": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "ME",
-        "generation_portion": 0.7,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'ME'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'ME'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.07810129,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'PA'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'PA'"
+        }
     },
-    {
-        "id": "policy_26",
+    "rps_RI": {
         "type": "rps",
-        "_class": "RPS",
-        "jurisdiction": "HI",
-        "generation_portion": 0.35,
-        "generation_minimum": 0,
-        "capacity_portion": 0,
-        "capacity_minimum": 0.0,
-        "inclusion_criteria": [
-            "lambda a: a.get('renewable', True)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'HI'"
-        ],
-        "exclusion_criteria": [
-            "lambda a: not a.get('renewable', False)",
-            "lambda a: a.get('_class', '') != 'Store'",
-            "lambda a: a.get('type', '') != 'load'",
-            "lambda a: a.get('jurisdiction', '') == 'HI'"
-        ]
+        "_class": "Portfolio_Standard",
+        "ratio": 0.335916647,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'RI'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'RI'"
+        }
+    },
+    "rps_TX": {
+        "type": "rps",
+        "_class": "Portfolio_Standard",
+        "ratio": 0.039919281,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'TX'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'TX'"
+        }
+    },
+    "rps_voluntary": {
+        "type": "rps",
+        "_class": "Portfolio_Standard",
+        "ratio": 0.059794406,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'voluntary'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'voluntary'"
+        }
+    },
+    "rps_VT": {
+        "type": "rps",
+        "_class": "Portfolio_Standard",
+        "ratio": 0.63,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'VT'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'VT'"
+        }
+    },
+    "rps_WA": {
+        "type": "rps",
+        "_class": "Portfolio_Standard",
+        "ratio": 0.129821978,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'WA'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'WA'"
+        }
+    },
+    "rps_WI": {
+        "type": "rps",
+        "_class": "Portfolio_Standard",
+        "ratio": 0.100067305,
+        "inclusion_criteria": {
+            "renewable": "lambda a: a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'WI'"
+        },
+        "exclusion_criteria": {
+            "renewable": "lambda a: not a.get('renewable', False)",
+            "not_battery": "lambda a: a.get('_class', '') != 'Store'",
+            "not_load": "lambda a: a.get('type', '') != 'load'",
+            "jurisdiction": "lambda a: a.get('jurisdiction', '') == 'WI'"
+        }
     }
-]
+}

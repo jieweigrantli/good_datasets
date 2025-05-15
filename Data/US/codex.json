@@ -115,9 +115,23 @@
 	},
 	{
 		"name": "rps",
-		"file": "Raw/RPS.csv",
+		"file": "Raw/rps_fraction.csv",
 		"kwargs": {
-			"header": 1
+			"header": 0
+		}
+	},
+	{
+		"name": "storage_mandates",
+		"file": "Raw/storage_mandates.csv",
+		"kwargs": {
+			"header": 0
+		}
+	},
+	{
+		"name": "hydro",
+		"file": "Raw/capacity_factor.csv",
+		"kwargs": {
+			"header": 0
 		}
 	}
 ]
